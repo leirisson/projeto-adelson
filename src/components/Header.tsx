@@ -1,61 +1,37 @@
 import React from 'react';
-import { Phone, ArrowRight } from 'lucide-react';
+import { Shield, Phone, Mail, Instagram } from 'lucide-react';
 
 const Header = () => {
-  const handleWhatsAppClick = () => {
-    const message = "Olá! Gostaria de saber mais sobre os serviços da ASZ Consultoria.";
-    const whatsappUrl = `https://wa.me/5511999999999?text=${encodeURIComponent(message)}`;
-    window.open(whatsappUrl, '_blank');
-  };
-
   return (
-    <header className="relative bg-gradient-to-br from-[#3A7D44] to-[#2E5D89] text-white overflow-hidden min-h-screen flex items-center">
-      {/* Background Image */}
-      <div className="absolute inset-0">
-        <img 
-          src="https://images.pexels.com/photos/3184465/pexels-photo-3184465.jpeg?auto=compress&cs=tinysrgb&w=1920&h=1080&fit=crop"
-          alt="Consultoria empresarial"
-          className="w-full h-full object-cover opacity-20"
-        />
-        <div className="absolute inset-0 bg-gradient-to-br from-[#3A7D44]/80 to-[#2E5D89]/80"></div>
-      </div>
-      
-      <div className="relative container mx-auto px-4 py-16 md:py-20">
-        <div className="max-w-4xl mx-auto text-center">
-          {/* Logo */}
-          <div className="mb-8">
-            <h1 className="text-4xl md:text-6xl font-bold mb-2 tracking-tight">
-              ASZ <span className="text-green-300">Consultoria</span>
-            </h1>
-            <p className="text-xl md:text-3xl font-light opacity-90">& Treinamento</p>
+    <header className="bg-white shadow-sm sticky top-0 z-50">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="flex justify-between items-center py-4">
+          <div className="flex items-center space-x-3">
+            <div className="w-12 h-12 bg-gradient-to-br from-green-600 to-blue-600 rounded-lg flex items-center justify-center">
+              <Shield className="w-7 h-7 text-white" />
+            </div>
+            <div>
+              <h1 className="text-xl font-bold text-gray-900">ASZ Consultoria</h1>
+              <p className="text-sm text-gray-600">Sistemas de Gestão Integrada</p>
+            </div>
           </div>
-
-          {/* Frase de Impacto */}
-          <h2 className="text-2xl md:text-4xl font-bold mb-6 leading-tight">
-            Consultoria e Treinamentos <span className="text-green-300">ISO</span> para sua empresa alcançar <span className="text-yellow-300">excelência!</span>
-          </h2>
-
-          <p className="text-lg md:text-xl mb-8 opacity-90 max-w-2xl mx-auto">
-            Transforme sua organização com nossos serviços especializados em certificações ISO, ANVISA e INMETRO.
-          </p>
-
-          {/* CTA Principal */}
-          <button
-            onClick={handleWhatsAppClick}
-            className="inline-flex items-center gap-3 bg-green-500 hover:bg-green-600 text-white px-8 py-4 rounded-full text-lg font-semibold transition-all duration-300 transform hover:scale-105 hover:shadow-lg"
-          >
-            <Phone className="w-6 h-6" />
-            Falar no WhatsApp
-            <ArrowRight className="w-5 h-5" />
-          </button>
-
-          <p className="text-sm mt-4 opacity-75">Orçamento gratuito • Resposta rápida</p>
+          
+          <div className="hidden md:flex items-center space-x-6">
+            <div className="flex items-center space-x-2 text-sm text-gray-600">
+              <Phone className="w-4 h-4" />
+              <span>Atendimento Nacional</span>
+            </div>
+            <div className="flex items-center space-x-2 text-sm text-gray-600">
+              <Mail className="w-4 h-4" />
+              <span>asz.gestao@gmail.com</span>
+            </div>
+            <div className="flex items-center space-x-2 text-sm text-gray-600">
+              <Instagram className="w-4 h-4" />
+              <span>@aszconsultoria.sgi</span>
+            </div>
+          </div>
         </div>
       </div>
-
-      {/* Decorative Elements */}
-      <div className="absolute top-0 right-0 w-64 h-64 bg-white opacity-5 rounded-full -translate-y-32 translate-x-32"></div>
-      <div className="absolute bottom-0 left-0 w-48 h-48 bg-white opacity-5 rounded-full translate-y-24 -translate-x-24"></div>
     </header>
   );
 };
